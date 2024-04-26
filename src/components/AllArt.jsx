@@ -1,6 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllArt = () => {
+   
     const artItems = useLoaderData()
     // const { name, email, image, subcategory, price, rating, customization, stockStatus, description, time } = artItems
     return (
@@ -47,11 +48,13 @@ const AllArt = () => {
                             <p className="mt-1.5 text-sm text-gray-700">${art.price}</p>
 
                             <form className="mt-4">
-                                <button
+                                <Link to={`/card/${art._id}`}>
+                                <button 
                                     className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
                                 >
                                     View Details
                                 </button>
+                                </Link>
                             </form>
                         </div>
                     </div>

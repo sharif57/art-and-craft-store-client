@@ -14,6 +14,7 @@ import AuthProvider from './AuthProvider/AuthProvider';
 import Error from './Pages/Error';
 import AddCraftItem from './components/AddCraftItem';
 import AllArt from './components/AllArt';
+import CardDetails from './Pages/CardDetails';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,11 @@ const router = createBrowserRouter([
         path: '/allArt',
         element: <AllArt></AllArt>,
         loader: () => fetch('http://localhost:5000/items')
-
+      },
+      {
+        path: '/card/:id',
+        element: <CardDetails></CardDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
       }
 
     ]

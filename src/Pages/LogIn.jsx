@@ -1,15 +1,27 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const LogIn = () => {
-    const { googleLogin } = useContext(AuthContext)
+    const { googleLogin, loginUser } = useContext(AuthContext)
+    const [success, setSuccess] = useState('')
+    const [error, setError] = useState('')
+
+
 
     const handleLogin = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
+
+        loginUser(email, password)
+            .then(() => {
+                
+                // navigate(location?.state ? location.state : '/')
+                setSuccess(alert('user login successfully'))
+            })
+            .catch(error => setError(error.message))
     }
 
     const handleGoogleLogin = () => {
@@ -58,7 +70,7 @@ const LogIn = () => {
                         </div>
                     </div>
                     {/* <button type="button" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">Sign in</button> */}
-                    <button className="btn btn-primary w-full">sign in</button>
+                    <button className="btn btn-primary w-full">Login</button>
                 </form>
             </div>
 
