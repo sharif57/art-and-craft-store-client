@@ -15,6 +15,8 @@ import Error from './Pages/Error';
 import AddCraftItem from './components/AddCraftItem';
 import AllArt from './components/AllArt';
 import CardDetails from './Pages/CardDetails';
+import MyCard from './components/MyCard';
+import UpdateItems from './components/UpdateItems';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +50,15 @@ const router = createBrowserRouter([
         path: '/card/:id',
         element: <CardDetails></CardDetails>,
         loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+      },
+      {
+        path: '/myCard',
+        element: <MyCard></MyCard>
+      },
+      {
+        path:'/updateItems/:id',
+        element: <UpdateItems></UpdateItems>,
+        loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
       }
 
     ]

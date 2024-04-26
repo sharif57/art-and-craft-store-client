@@ -1,12 +1,15 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const AddCraftItem = () => {
+    const {user} = useContext(AuthContext)
     const handleAddItem = (e) => {
         e.preventDefault();
         const form = e.target;
 
         const name = form.name.value;
-        const email = form.email.value;
+        const email = user.email;
         const image = form.image.value;
         const subcategory = form.category.value;
         const price = form.price.value;
@@ -53,16 +56,16 @@ const AddCraftItem = () => {
                             <label className="label">
                                 <span className="label-text">User Name</span>
                             </label>
-                            <label className="input-group">
-                                <input type="text" name="name" placeholder="User Name" className="input input-bordered w-full" />
+                            <label className="input-group  text-red-700 border-2 border-black rounded-lg"> 
+                                <input type="text" name="name" placeholder="User Name" className="input font-extrabold input-bordered w-full" defaultValue={user.displayName} disabled/>
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
                             <label className="label">
                                 <span className="label-text">User Email</span>
                             </label>
-                            <label className="input-group">
-                                <input type="text" name="email" placeholder="User email" className="input input-bordered w-full" />
+                            <label className="input-group border-2 border-black rounded-lg">
+                                <input type="text" name="email" placeholder="User email" className="input input-bordered w-full" defaultValue={user.email} disabled  />
                             </label>
                         </div>
                     </div>

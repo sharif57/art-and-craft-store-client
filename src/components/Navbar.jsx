@@ -97,7 +97,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { HiHomeModern } from "react-icons/hi2";
 import { BiLogInCircle } from "react-icons/bi";
 import { FaArtstation } from "react-icons/fa";
 
@@ -133,7 +132,7 @@ const Navbar = () => {
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>Home</NavLink></li>
         <li><NavLink to='/allArt' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>All Art &craft Items</NavLink></li>
         <li><NavLink to='/addCardItem' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>Add Craft Item</NavLink></li>
-        <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>My Art & Craft List</NavLink></li>
+        <li><NavLink to='/myCard' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>My Art & Craft List</NavLink></li>
     </>
     return (
         <div>
