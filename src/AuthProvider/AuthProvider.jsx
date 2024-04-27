@@ -22,15 +22,7 @@ const AuthProvider = ({ children }) => {
         // .then(result => console.log(result.user))
     }
 
-    //  update user with register
-
-    const updateUserProfile = (name, image) => {
-        return  updateProfile(auth.currentUser, {
-            displayName: name,
-            photoURL: image
-        })
-    }
-
+    
 
     const loginUser = (email, password) => {
         setLoading(true)
@@ -65,7 +57,6 @@ const AuthProvider = ({ children }) => {
 
     const authInfo = {
         registerUser,
-        updateUserProfile,
         loginUser,
         googleLogin,
         githubLogin,
