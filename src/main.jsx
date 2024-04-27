@@ -17,6 +17,7 @@ import AllArt from './components/AllArt';
 import CardDetails from './Pages/CardDetails';
 import MyCard from './components/MyCard';
 import UpdateItems from './components/UpdateItems';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -39,21 +40,21 @@ const router = createBrowserRouter([
       },
       {
         path: '/addCardItem',
-        element: <AddCraftItem></AddCraftItem>
+        element: <PrivateRoutes><AddCraftItem></AddCraftItem></PrivateRoutes>
       },
       {
         path: '/allArt',
-        element: <AllArt></AllArt>,
+        element: <PrivateRoutes><AllArt></AllArt></PrivateRoutes>,
         loader: () => fetch('http://localhost:5000/items'),
       },
       {
         path: '/card/:id',
-        element: <CardDetails></CardDetails>,
+        element: <PrivateRoutes><CardDetails></CardDetails></PrivateRoutes>,
         loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
       },
       {
         path: '/myCard',
-        element: <MyCard></MyCard>
+        element: <PrivateRoutes><MyCard></MyCard></PrivateRoutes>
       },
       {
         path:'/updateItems/:id',

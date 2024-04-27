@@ -7,7 +7,7 @@ const CardDetails = () => {
     return (
         <div>
 
-            <div className="hero min-h-10 bg-base-200">
+            <div className="hero min-h-10 bg-base-300">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={image} className="max-w-sm rounded-lg shadow-2xl " />
                     <div>

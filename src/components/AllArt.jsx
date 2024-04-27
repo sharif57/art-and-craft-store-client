@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import {  NavLink, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const AllArt = () => {
@@ -59,11 +59,11 @@ const AllArt = () => {
                             </td>
                             <td>{user.metadata.creationTime
                             }</td>
-                            <Link to={`/card/${_id}`}>
+                            <NavLink to={`/card/${item._id}`}>
                                 <th>
                                     <button className="btn btn-success btn-xs">details</button>
                                 </th>
-                            </Link>
+                            </NavLink>
                         </tr>
                     ))}
 
