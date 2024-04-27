@@ -75,7 +75,7 @@ const AuthProvider = ({ children }) => {
     const registerUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
-        // .then(result => console.log(result.user))
+        .then(result => console.log(result.user))
     }
 
     //  update user with register

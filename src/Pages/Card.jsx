@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Card = ({ artItem }) => {
 
     // eslint-disable-next-line react/prop-types
-    const {_id, name, email, image, subcategory, price, rating, customization, stockStatus, description, time } = artItem
+    const { _id, name, email, image, subcategory, price, rating, customization, stockStatus, description, time } = artItem
 
     const handleView = _id => {
         console.log(_id);
@@ -16,7 +17,10 @@ const Card = ({ artItem }) => {
                 <h2 className="text-xl font-semibold tracking-wide">{subcategory}</h2>
             </div>
             <p className="dark:text-gray-800">{description}</p>
-            <button onClick={()=> handleView(_id)} className="btn btn-primary w-full">View Details</button>
+
+            <Link to={`/card/${_id}`}>
+                <button className="btn btn-primary w-full">View Details</button>
+            </Link>
         </div>
     );
 };
