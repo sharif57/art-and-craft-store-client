@@ -55,25 +55,27 @@ const MyCard = () => {
                 item?.map(p => (
                     <div key={p._id}>
 
-                        <article className="flex bg-white p-4  transition hover:shadow-xl">
+                        <article className="flex bg-white p-4 shadow-md  transition hover:shadow-xl">
 
                             <div className="hidden sm:block sm:basis-56">
                                 <img
                                     alt=""
                                     src={p.image}
-                                    className="aspect-square h-full w-full object-cover"
+                                    className="aspect-square rounded-lg h-full w-full object-cover"
                                 />
                             </div>
 
                             <div className="flex flex-1 flex-col justify-between">
                                 <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
                                     <a href="#">
-                                        <h3 className="font-bold uppercase text-gray-900">
+                                        <p className="font-bold">{p.item_name}</p>
+                                        <h3 className="font-bold uppercase text-2xl text-gray-900">
                                             {p.subcategory}
                                         </h3>
-                                        <h3 className="font-bold uppercase text-gray-900">
-                                            {p.item_name}
-                                        </h3>
+                                        <p className="mt-3"><span className="font-bold mt-7">Description:</span> {p.description}</p>
+                                        <p className="mt-3"><span className="font-bold mt-7">Time:</span> {p.time}</p>
+                                        
+                                        
                                     </a>
 
                                     <div className="flex justify-between mt-3">

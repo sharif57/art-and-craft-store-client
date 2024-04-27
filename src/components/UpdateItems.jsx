@@ -25,7 +25,7 @@ const UpdateItems = () => {
         const time = form.time.value;
 
         const newUsers = { name, email, image, item_name, subcategory, price, rating, customization, stockStatus, description, time }
-        console.log(newUsers);
+        // console.log(newUsers);
 
         fetch(`http://localhost:5000/items/${_id}`, {
             method: 'PUT',
@@ -68,7 +68,7 @@ const UpdateItems = () => {
                     {/* Item Name  */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Item Name</label>
-                        <input type="text" id="item_name" name="item_name" className="mt-1  p-2.5 border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                        <input type="text" id="item_name" name="item_name" className="mt-1  p-2.5 border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={item_name}/>
                     </div>
 
                     {/* Subcategory Name */}
@@ -92,7 +92,7 @@ const UpdateItems = () => {
                     {/* Rating */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Rating</label>
-                        <input type="number"  name="rating" min="0" max="5" className="mt-1  p-2.5 border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={rating} />
+                        <input type="number"  name="rating" min="0"  className="mt-1  p-2.5 border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={rating} />
                     </div>
 
                     {/* Customization*/}

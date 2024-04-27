@@ -76,7 +76,7 @@ const AddCraftItem = () => {
                         <label className="label">
                             <span className="label-text">item_name</span>
                         </label>
-                        <label className="input-group   rounded-lg">
+                        <label className="input-group ">
                             <input type="text" name="item_name" placeholder="item_name" className="input input-bordered w-full" />
                         </label>
                     </div>
