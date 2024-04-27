@@ -71,6 +71,9 @@ const MyCard = () => {
                                         <h3 className="font-bold uppercase text-gray-900">
                                             {p.subcategory}
                                         </h3>
+                                        <h3 className="font-bold uppercase text-gray-900">
+                                            {p.item_name}
+                                        </h3>
                                     </a>
 
                                     <div className="flex justify-between mt-3">

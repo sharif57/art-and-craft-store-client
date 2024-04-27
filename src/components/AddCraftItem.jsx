@@ -3,11 +3,12 @@ import Swal from 'sweetalert2'
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const AddCraftItem = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const handleAddItem = (e) => {
         e.preventDefault();
         const form = e.target;
 
+        const item_name = form.item_name.value
         const name = form.name.value;
         const email = user.email;
         const image = form.image.value;
@@ -19,7 +20,7 @@ const AddCraftItem = () => {
         const description = form.description.value;
         const time = form.time.value;
 
-        const newUsers = { name, email, image, subcategory, price, rating, customization, stockStatus, description, time }
+        const newUsers = { name, email, image, item_name, subcategory, price, rating, customization, stockStatus, description, time }
         console.log(newUsers);
 
         // send data to the server
@@ -56,18 +57,28 @@ const AddCraftItem = () => {
                             <label className="label">
                                 <span className="label-text">User Name</span>
                             </label>
-                            <label className="input-group  text-red-700 border-2 border-black rounded-lg"> 
-                                <input type="text" name="name" placeholder="User Name" className="input font-extrabold input-bordered w-full" defaultValue={user.displayName} disabled/>
+                            <label className="input-group  text-red-700 border-2 border-black rounded-lg">
+                                <input type="text" name="name" placeholder="User Name" className="input font-extrabold input-bordered w-full" defaultValue={user.displayName} disabled />
                             </label>
                         </div>
+
                         <div className="form-control md:w-1/2 ml-4">
                             <label className="label">
                                 <span className="label-text">User Email</span>
                             </label>
                             <label className="input-group border-2 border-black rounded-lg">
-                                <input type="text" name="email" placeholder="User email" className="input input-bordered w-full" defaultValue={user.email} disabled  />
+                                <input type="text" name="email" placeholder="User email" className="input input-bordered w-full" defaultValue={user.email} disabled />
                             </label>
                         </div>
+                    </div>
+                    {/* item_name */}
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">item_name</span>
+                        </label>
+                        <label className="input-group   rounded-lg">
+                            <input type="text" name="item_name" placeholder="item_name" className="input input-bordered w-full" />
+                        </label>
                     </div>
                     {/* form supplier row */}
                     <div className="md:flex mb-8">

@@ -6,9 +6,6 @@ const Card = ({ artItem }) => {
     // eslint-disable-next-line react/prop-types
     const { _id, name, email, image, subcategory, price, rating, customization, stockStatus, description, time } = artItem
 
-    const handleView = _id => {
-        console.log(_id);
-    }
     return (
         <div className=" p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
             <img src={image} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
