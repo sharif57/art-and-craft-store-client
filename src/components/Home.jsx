@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../Pages/Banner";
 import Card from "../Pages/Card";
+import Review from "../Pages/Review";
+import Cost from "../Pages/Cost";
 
 const Home = () => {
     const artItems = useLoaderData()
@@ -18,6 +20,8 @@ const Home = () => {
                     </Card>)
                 }
             </div>
+            <Review></Review>
+            <Cost></Cost>
         </div>
     );
 };

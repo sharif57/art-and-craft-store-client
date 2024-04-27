@@ -10,27 +10,12 @@ const Card = ({ artItem }) => {
     const { _id, name, email, item_name, image, subcategory, price, rating, customization, stockStatus, description, time } = artItem
 
     return (
-        // <div className=" p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
-        //     <img src={image} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
-        //     <div className="mt-6 mb-2">
-        //         <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-600">{stockStatus}</span>
-        //         <h2 className="text-xl font-semibold tracking-wide">{subcategory}</h2>
-        //     </div>
-        //     <div className="mt-6 mb-2">
-        //         <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-600">{stockStatus}</span>
-        //         <h2 className="text-xl font-semibold tracking-wide">item: {item_name}</h2>
-        //     </div>
-        //     <p className="dark:text-gray-800">{description}</p>
+        
 
-        //     <Link to={`/card/${_id}`}>
-        //         <button className="btn btn-primary w-full">View Details</button>
-        //     </Link>
-        // </div>
-
-        <div className="">
+        <div className="mb-8">
 
 
-            <div href="#" className="group max-w-sm hover:shadow-lg relative block overflow-hidden">
+            <div href="#" className="group max-w-sm bg-white hover:shadow-lg relative block overflow-hidden">
                 <button
                     className="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75"
                 >

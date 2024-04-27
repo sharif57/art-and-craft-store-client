@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: '/allArt',
         element: <AllArt></AllArt>,
-        loader: () => fetch('http://localhost:5000/items')
+        loader: () => fetch('http://localhost:5000/items'),
       },
       {
         path: '/card/:id',
