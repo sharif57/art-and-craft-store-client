@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -7,6 +7,7 @@ const LogIn = () => {
     const { googleLogin, loginUser, githubLogin } = useContext(AuthContext)
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
+    const navigate = useNavigate()
 
 
 
@@ -19,7 +20,7 @@ const LogIn = () => {
         loginUser(email, password)
             .then(() => {
 
-                // navigate(location?.state ? location.state : '/')
+                navigate(location?.state ? location.state : '/')
                 // setSuccess(alert('user login successfully'))
                 setSuccess(
                     setError(Swal.fire({
@@ -34,10 +35,12 @@ const LogIn = () => {
     }
 
     const handleGoogleLogin = () => {
+        navigate(location?.state ? location.state : '/')
         googleLogin()
     }
 
     const handleGithubLogin = () => {
+        navigate(location?.state ? location.state : '/')
         githubLogin()
     }
 

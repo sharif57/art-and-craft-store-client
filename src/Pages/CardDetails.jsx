@@ -8,8 +8,8 @@ const CardDetails = () => {
         <div>
 
             <div className="hero min-h-10 bg-base-300">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img src={image} className="max-w-sm rounded-lg shadow-2xl " />
+                <div className="lg:hero-content flex-col p-1 lg:flex-row-reverse">
+                    <img src={image} className="lg:max-w-sm rounded-lg shadow-2xl " />
                     <div>
                         <h1 className="font-bold">{item_name}</h1>
                         <h1 className="text-5xl font-bold">{subcategory}</h1>

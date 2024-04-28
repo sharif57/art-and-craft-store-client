@@ -56,7 +56,7 @@ const Navbar = () => {
                         <div className="flex flex-row">
                             <FaArtstation className="size-10"></FaArtstation>
 
-                            <p className="btn btn-ghost text-xl "> <span className=" font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">Art </span> <span className=" font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">& Craft Store</span></p>
+                            <p className="btn btn-ghost lg:ml-0 -ml-7 lg:text-xl "> <span className=" font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">Art </span> <span className=" font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">& Craft Store</span></p>
                         </div>
                     </Link>
                 </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
                     {
                         user ? (
                             <>
-                                <div className="tooltip" data-tip={user?.displayName || 'No Name'}>
+                                <div className="tooltip hidden sm:block " data-tip={user?.displayName || 'No Name'}>
                                     <span><img className="rounded-full size-10  border-2 border-red-600" src={user?.photoURL || 'https://i.ibb.co/ZNVWf3G/user-sign-icon-front-side-with-white-background.jpg'} alt="" /></span>
                                 </div>
                                 <a onClick={handleLogOut} className="btn"><BiLogInCircle></BiLogInCircle> Log Out</a>

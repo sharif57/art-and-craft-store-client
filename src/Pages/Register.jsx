@@ -4,7 +4,10 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
@@ -18,6 +21,8 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState('')
     const location = useLocation()
     const navigate = useNavigate()
+    const notify = () => toast("user register successfully!");
+
 
 
     const handleRegister = (e) => {
@@ -26,14 +31,21 @@ const Register = () => {
         const email = e.target.email.value;
         const photo = e.target.photo.value;
         const password = e.target.password.value;
-        // registerUser(email, password)
-        //     .then(() => {
-        //         navigate(location?.state ? location.state : '/')
-        //         updateUserProfile(name, photo)
-        //     })
+        registerUser(email, password)
+            .then(() => {
+                navigate(location?.state ? location.state : '/')
+            })
 
         if (/^(?=.*[A-Z])(?=.*[a-z]).{6,}$/.test(password)) {
-            setError(alert("register successfully"));
+            setError(
+                // setError(Swal.fire({
+                //     title: 'Success!',
+                //     text: 'user login successfully',
+                //     icon: 'success',
+                //     confirmButtonText: 'Cool'
+                // }))
+
+            );
             registerUser(email, password)
                 .then(() => {
                     navigate(location?.state ? location.state : '/')
@@ -42,7 +54,15 @@ const Register = () => {
         }
 
         else {
-            setError(alert('Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.'));
+            setError(
+                // alert('Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.')
+                setError(Swal.fire({
+                    title: 'Error!',
+                    text: 'Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long',
+                    icon: 'error',
+                    confirmButtonText: 'Try aging'
+                }))
+            );
             return;
 
         }
@@ -93,9 +113,11 @@ const Register = () => {
                         </div>
 
                     </div>
-                    <button data-aos="fade-up" data-aos-delay='2100' className="btn btn-primary w-full">Register Now</button>
+                    <button onClick={notify} className="btn btn-primary w-full">Register Now</button>
                 </form>
             </div>
+            <ToastContainer />
+
 
         </div>
     );
