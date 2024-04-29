@@ -48,7 +48,7 @@ const AddCraftItem = () => {
     }
     return (
         <div>
-            <div className="bg-[#F4F3F0] p-24">
+            <div className="bg-[#F4F3F0] p-24 font-Roboto">
                 <h2 className="text-3xl font-extrabold text-center">Add Craft Items</h2>
                 <form onSubmit={handleAddItem}>
                     {/* form name and quantity row */}
@@ -121,12 +121,7 @@ const AddCraftItem = () => {
 
                     <div className="md:flex mb-8 gap-4">
                         <div className="form-control md:w-1/2 ">
-                            {/* <label className="label">
-                                <span className="label-text">customization</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="customization" placeholder="customization- example- yes, no" className="input input-bordered w-full" />
-                            </label> */}
+                           
                             <label className="label">
                                 <span className="label-text">customization</span>
                             </label>

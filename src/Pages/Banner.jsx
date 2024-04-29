@@ -9,8 +9,9 @@ import { Navigation } from 'swiper/modules';
 
 
 const Banner = () => {
+ 
     return (
-        <div className="relative p-2">
+        <div className="relative p-2 font-Roboto">
             <Swiper
                 navigation={true}
                 modules={[Navigation]}

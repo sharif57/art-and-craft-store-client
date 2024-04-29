@@ -18,6 +18,8 @@ import CardDetails from './Pages/CardDetails';
 import MyCard from './components/MyCard';
 import UpdateItems from './components/UpdateItems';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
+import Subcategory from './Pages/Subcategory';
+import SubDetails from './Pages/SubDetails';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,8 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch('http://localhost:5000/items')
+        
+        //https://art-and-craft-store-server-16yvlnoyb-sharif-mahamud.vercel.app/items
       },
       {
         path: '/login',
@@ -44,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/allArt',
-        element: <PrivateRoutes><AllArt></AllArt></PrivateRoutes>,
+        element: <AllArt></AllArt>,
         loader: () => fetch('http://localhost:5000/items'),
       },
       {
@@ -57,9 +61,19 @@ const router = createBrowserRouter([
         element: <PrivateRoutes><MyCard></MyCard></PrivateRoutes>
       },
       {
-        path:'/updateItems/:id',
+        path: '/updateItems/:id',
         element: <UpdateItems></UpdateItems>,
-        loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+      },
+      {
+        path: '/sub',
+        element: <Subcategory></Subcategory>,
+        loader: () => fetch('http://localhost:5000/subcategory')
+      },
+      {
+        path: '/subDetails/:id',
+        element: <PrivateRoutes><SubDetails></SubDetails></PrivateRoutes>,
+        loader: ({params}) => fetch(`http://localhost:5000/subcategory/${params.id}`)
       }
 
     ]

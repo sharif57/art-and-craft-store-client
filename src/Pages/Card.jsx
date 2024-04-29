@@ -12,7 +12,7 @@ const Card = ({ artItem }) => {
     return (
         
 
-        <div className="mb-8">
+        <div className="mb-8 font-Roboto">
 
 
             <div href="#" className="group max-w-sm bg-white hover:shadow-lg relative block overflow-hidden">

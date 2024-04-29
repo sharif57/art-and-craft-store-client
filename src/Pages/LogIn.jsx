@@ -1,9 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 
 const LogIn = () => {
+
+    useEffect(() => {
+        document.title = 'Login Page'
+    }, [])
     const { googleLogin, loginUser, githubLogin } = useContext(AuthContext)
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
@@ -46,8 +50,8 @@ const LogIn = () => {
 
     return (
         <div>
-            <div className="w-full max-w-md mx-auto p-4 rounded-md shadow-2xl mt-4  sm:p-8 dark:bg-green-50 dark:text-gray-800">
-                <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
+            <div className="w-full font-Roboto max-w-md mx-auto p-4 rounded-md shadow-2xl mt-4  sm:p-8 dark:bg-green-50 dark:text-gray-800">
+                <h2 className="mb-3 text-3xl font-semibold text-center bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">Login to your account</h2>
                 <p className="text-sm text-center dark:text-gray-600">Dont have account?
                     <Link to={'/register'}>
                         <a href="#" rel="noopener noreferrer" className="focus:underline hover:underline text-primary font-bold">Sign up here</a>

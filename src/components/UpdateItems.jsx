@@ -1,9 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const UpdateItems = () => {
-    
+    useEffect(() => {
+        document.title = 'Update Items'
+    }, [])
+
     const items = useLoaderData()
     const { _id, name, email, item_name, image, subcategory, price, rating, customization, stockStatus, description, time } = items
 
@@ -55,7 +59,7 @@ const UpdateItems = () => {
             {/* <h1>update  section{name}</h1> */}
 
 
-            <div className="max-w-lg mx-auto mt-8 p-6 bg-gray-300 rounded-lg shadow-md">
+            <div className="max-w-lg mx-auto font-Roboto mt-8 p-6 bg-gray-300 rounded-lg shadow-md">
                 <h2 className="text-2xl text-center font-bold mb-4">Update Art & Craft Item</h2>
 
                 <form onSubmit={handleUpdate} action="#" method="post" className="space-y-4">
@@ -68,7 +72,7 @@ const UpdateItems = () => {
                     {/* Item Name  */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Item Name</label>
-                        <input type="text" id="item_name" name="item_name" className="mt-1  p-2.5 border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={item_name}/>
+                        <input type="text" id="item_name" name="item_name" className="mt-1  p-2.5 border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={item_name} />
                     </div>
 
                     {/* Subcategory Name */}
@@ -92,14 +96,14 @@ const UpdateItems = () => {
                     {/* Rating */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Rating</label>
-                        <input type="number"  name="rating" min="0"  className="mt-1  p-2.5 border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={rating} />
+                        <input type="number" name="rating" min="0" className="mt-1  p-2.5 border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={rating} />
                     </div>
 
                     {/* Customization*/}
 
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Customization</label>
-                        <select  name="customization" className="mt-1  p-2.5 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" defaultValue={customization}>
+                        <select name="customization" className="mt-1  p-2.5 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" defaultValue={customization}>
                             <option value="In Stock">yes</option>
                             <option value="Made to Order">no</option>
                         </select>
@@ -108,13 +112,13 @@ const UpdateItems = () => {
                     {/* Processing Time  */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Processing Time</label>
-                        <input type="text"  name="time" className="mt-1  p-2.5 border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={time} />
+                        <input type="text" name="time" className="mt-1  p-2.5 border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" defaultValue={time} />
                     </div>
 
                     {/* Stock Status*/}
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Stock Status</label>
-                        <select  name="stockStatus" className="mt-1  p-2.5 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" defaultValue={stockStatus}>
+                        <select name="stockStatus" className="mt-1  p-2.5 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" defaultValue={stockStatus}>
                             <option value="In Stock">In Stock</option>
                             <option value="Made to Order">Made to Order</option>
                         </select>

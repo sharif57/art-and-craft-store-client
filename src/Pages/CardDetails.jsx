@@ -1,13 +1,17 @@
+import { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const CardDetails = () => {
+    useEffect(() => {
+		document.title = 'Card Information'
+	}, [])
     const items = useLoaderData()
     const { _id, name, email, image,item_name, subcategory, price, rating, customization, stockStatus, description, time } = items
 
     return (
         <div>
 
-            <div className="hero min-h-10 bg-base-300">
+            <div className="hero min-h-10 bg-base-300 font-Roboto">
                 <div className="lg:hero-content flex-col p-1 lg:flex-row-reverse">
                     <img src={image} className="lg:max-w-sm rounded-lg shadow-2xl " />
                     <div>

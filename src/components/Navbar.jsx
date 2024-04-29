@@ -42,7 +42,7 @@ const Navbar = () => {
     </>
     return (
         <div>
-            <div className="navbar bg-base-100 mt-6">
+            <div className="navbar bg-base-100 mt-6 font-Roboto">
                 <div className="navbar-start">
                     <div className="dropdown z-10">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,7 +56,7 @@ const Navbar = () => {
                         <div className="flex flex-row">
                             <FaArtstation className="size-10"></FaArtstation>
 
-                            <p className="btn btn-ghost lg:ml-0 -ml-7 lg:text-xl "> <span className=" font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">Art </span> <span className=" font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">& Craft Store</span></p>
+                            <p className="btn btn-ghost lg:ml-0 -ml-7 lg:text-3xl "> <span className=" font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">Art </span> <span className=" font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">& Craft Store</span></p>
                         </div>
                     </Link>
                 </div>

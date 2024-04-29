@@ -70,7 +70,7 @@ const Register = () => {
     }
 
     return (
-        <div>
+        <div className="font-Roboto">
             {
                 error && <div>{error}</div>
             }

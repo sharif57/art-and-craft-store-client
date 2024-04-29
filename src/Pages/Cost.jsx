@@ -3,6 +3,7 @@ const Cost = () => {
     return (
         <div className="mt-12">
             <h1 className="lg:text-5xl  mb-6 font-bold text-center  bg-gradient-to-r from-pink-600 via-blue-900 to-blue-500 text-transparent bg-clip-text animate-gradient">Our Website Subscription </h1>
+            <p className="w-1/2 mx-auto mt-4 mb-4 text-center">Research and select a payment gateway that supports subscription billing. Popular options include Stripe, PayPal, and Braintree.</p>
             <div className="max-w-screen-xl mb-8  px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-stretch md:grid-cols-3 md:gap-8">
                     <div className="divide-y shadow-md hover:shadow-xl bg-white divide-gray-200 rounded-2xl border border-gray-200 ">

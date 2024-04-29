@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Error = () => {
     return (
 
-        <div className="grid h-screen place-content-center bg-white px-4">
+        <div className="grid h-screen place-content-center bg-white px-4 font-Roboto">
             <div className="text-center">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

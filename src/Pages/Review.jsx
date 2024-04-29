@@ -3,7 +3,7 @@ const Review = () => {
         <div className="mt-6 ">
             <section className="">
                 <div className="mx-auto  max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-                    <h2 className="text-center lg:text-4xl text-2xl font-bold tracking-tight  sm:text-5xl  bg-gradient-to-r from-pink-600 via-blue-900 to-blue-500 text-transparent bg-clip-text animate-gradient">
+                    <h2 className="text-center lg:text-5xl text-2xl font-bold tracking-tight  sm:text-5xl  bg-gradient-to-r from-pink-600 via-blue-900 to-blue-500 text-transparent bg-clip-text animate-gradient">
                         Read trusted reviews from our customers
                     </h2>
 
@@ -80,7 +80,7 @@ const Review = () => {
                             </p>
                         </div>
 
-                        <blockquote className="rounded-lg shadow-md hover:shadow-xl bg-gray-50 p-6  sm:p-8">
+                        <div className="rounded-lg shadow-md hover:shadow-xl bg-gray-50 p-6  sm:p-8">
                             <div className="flex items-center gap-4">
                                 <img
                                     alt=""
@@ -150,9 +150,9 @@ const Review = () => {
                                 Send post-purchase emails: Automatically send emails to customers after they make a purchase, thanking them for their order and inviting them to leave a review.
                                 Incentivize reviews: Offer discounts, loyalty points, or entry into a giveaway for customers .
                             </p>
-                        </blockquote>
+                        </div>
 
-                        <blockquote className="rounded-lg shadow-md hover:shadow-xl bg-gray-50 p-6 sm:p-8">
+                        <div className="rounded-lg shadow-md hover:shadow-xl bg-gray-50 p-6 sm:p-8">
                             <div className="flex items-center gap-4">
                                 <img
                                     alt=""
@@ -223,7 +223,7 @@ const Review = () => {
                                 Acknowledge positive reviews: Thank customers for their positive feedback and express appreciation for their support.
                                 .
                             </p>
-                        </blockquote>
+                        </div>
                     </div>
                 </div>
             </section>

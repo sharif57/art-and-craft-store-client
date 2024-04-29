@@ -3,9 +3,14 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Roboto: ["Roboto Slab", "serif"]
+      }
+    },
   },
   plugins: [require("daisyui")],
 }
