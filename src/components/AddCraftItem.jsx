@@ -24,7 +24,7 @@ const AddCraftItem = () => {
         console.log(newUsers);
 
         // send data to the server
-        fetch('http://localhost:5000/items', {
+        fetch('https://art-and-craft-store-server-lyart.vercel.app/items', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
@@ -48,11 +48,11 @@ const AddCraftItem = () => {
     }
     return (
         <div>
-            <div className="bg-[#F4F3F0] p-24 font-Roboto">
+            <div className="bg-gray-300 lg:p-24 p-2 font-Roboto">
                 <h2 className="text-3xl font-extrabold text-center">Add Craft Items</h2>
                 <form onSubmit={handleAddItem}>
                     {/* form name and quantity row */}
-                    <div className="md:flex mb-8">
+                    <div className="md:flex lg:mb-8">
                         <div className="form-control md:w-1/2">
                             <label className="label">
                                 <span className="label-text">User Name</span>
@@ -62,12 +62,12 @@ const AddCraftItem = () => {
                             </label>
                         </div>
 
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 lg:ml-4">
                             <label className="label">
                                 <span className="label-text">User Email</span>
                             </label>
-                            <label className="input-group border-2 border-black rounded-lg">
-                                <input type="text" name="email" placeholder="User email" className="input input-bordered w-full" defaultValue={user.email} disabled />
+                            <label className="input-group text-red-700 border-2 border-black rounded-lg">
+                                <input type="text" name="email" placeholder="User email" className="input font-extrabold input-bordered w-full" defaultValue={user.email} disabled />
                             </label>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ const AddCraftItem = () => {
                         </label>
                     </div>
                     {/* form supplier row */}
-                    <div className="md:flex mb-8">
+                    <div className="md:flex lg:mb-8">
                         <div className="form-control md:w-1/2">
                             <label className="label">
                                 <span className="label-text">image</span>
@@ -90,7 +90,7 @@ const AddCraftItem = () => {
                                 <input type="text" name="image" placeholder="items image" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 lg:ml-4">
                             <label className="label">
                                 <span className="label-text">subcategory_Name</span>
                             </label>
@@ -100,7 +100,7 @@ const AddCraftItem = () => {
                         </div>
                     </div>
                     {/* form category and details row */}
-                    <div className="md:flex mb-8">
+                    <div className="md:flex lg:mb-8">
                         <div className="form-control md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Price</span>
@@ -109,7 +109,7 @@ const AddCraftItem = () => {
                                 <input type="text" name="price" placeholder="price" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 lg:ml-4">
                             <label className="label">
                                 <span className="label-text">Rating</span>
                             </label>
@@ -119,7 +119,7 @@ const AddCraftItem = () => {
                         </div>
                     </div>
 
-                    <div className="md:flex mb-8 gap-4">
+                    <div className="md:flex lg:mb-8 gap-4">
                         <div className="form-control md:w-1/2 ">
                            
                             <label className="label">
@@ -132,7 +132,7 @@ const AddCraftItem = () => {
                             </select>
 
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 lg:ml-4">
                             <label className="label">
                                 <span className="label-text">stockStatus</span>
                             </label>
@@ -143,7 +143,7 @@ const AddCraftItem = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="md:flex mb-8">
+                    <div className="md:flex lg:mb-8">
                         <div className="form-control md:w-1/2">
                             <label className="label">
                                 <span className="label-text">short description</span>
@@ -152,7 +152,7 @@ const AddCraftItem = () => {
                                 <input type="text" name="description" placeholder="short description" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2  ml-4">
+                        <div className="form-control md:w-1/2  lg:ml-4">
                             <label className="label">
                                 <span className="label-text">processing_time</span>
                             </label>
@@ -162,7 +162,7 @@ const AddCraftItem = () => {
                         </div>
                     </div>
 
-                    <input type="submit" value="Add items" className="btn btn-primary w-full" />
+                    <input type="submit" value="Add items" className="btn mt-4 btn-primary w-full" />
 
                 </form>
             </div>

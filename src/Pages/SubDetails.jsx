@@ -4,7 +4,7 @@ const SubDetails = () => {
     const item = useLoaderData()
     return (
         <div>
-            <section className="overflow-hidden p-2 shadow-xl bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center">
+            <section className="overflow-hidden p-2 font-Roboto shadow-xl bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center">
                 <div className="p-8 md:p-12 lg:px-16 lg:py-24">
                     <div className="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
                         <h1>{item.item_name}</h1>

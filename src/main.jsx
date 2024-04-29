@@ -30,9 +30,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/items')
+        loader: () => fetch('https://art-and-craft-store-server-lyart.vercel.app/items')
         
-        //https://art-and-craft-store-server-16yvlnoyb-sharif-mahamud.vercel.app/items
       },
       {
         path: '/login',
@@ -49,12 +48,12 @@ const router = createBrowserRouter([
       {
         path: '/allArt',
         element: <AllArt></AllArt>,
-        loader: () => fetch('http://localhost:5000/items'),
+        loader: () => fetch('https://art-and-craft-store-server-lyart.vercel.app/items'),
       },
       {
         path: '/card/:id',
         element: <PrivateRoutes><CardDetails></CardDetails></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+        loader: ({ params }) => fetch(`https://art-and-craft-store-server-lyart.vercel.app/items/${params.id}`)
       },
       {
         path: '/myCard',
@@ -63,17 +62,17 @@ const router = createBrowserRouter([
       {
         path: '/updateItems/:id',
         element: <UpdateItems></UpdateItems>,
-        loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+        loader: ({ params }) => fetch(`https://art-and-craft-store-server-lyart.vercel.app/items/${params.id}`)
       },
       {
         path: '/sub',
         element: <Subcategory></Subcategory>,
-        loader: () => fetch('http://localhost:5000/subcategory')
+        loader: () => fetch('https://art-and-craft-store-server-lyart.vercel.app/subcategory')
       },
       {
         path: '/subDetails/:id',
         element: <PrivateRoutes><SubDetails></SubDetails></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/subcategory/${params.id}`)
+        loader: ({params}) => fetch(`https://art-and-craft-store-server-lyart.vercel.app/subcategory/${params.id}`)
       }
 
     ]

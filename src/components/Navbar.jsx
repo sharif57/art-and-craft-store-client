@@ -36,7 +36,7 @@ const Navbar = () => {
 
     const navLinks = <>
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>Home</NavLink></li>
-        <li><NavLink to='/allArt' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>All Art &craft Items</NavLink></li>
+        <li><NavLink to='/allArt' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>All Art & craft Items</NavLink></li>
         <li><NavLink to='/addCardItem' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>Add Craft Item</NavLink></li>
         <li><NavLink to='/myCard' className={({ isActive }) => isActive ? 'text-primary font-bold ' : 'font-bold'}>My Art & Craft List</NavLink></li>
     </>

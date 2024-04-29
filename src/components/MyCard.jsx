@@ -24,7 +24,7 @@ const MyCard = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/items/${id}`, {
+                    fetch(`https://art-and-craft-store-server-lyart.vercel.app/items/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
@@ -47,7 +47,7 @@ const MyCard = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myProduct/${user?.email}`)
+        fetch(`https://art-and-craft-store-server-lyart.vercel.app/myProduct/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data);

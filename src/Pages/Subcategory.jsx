@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Subcategory = () => {
     const [subcategory, setSubcategory] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/subcategory')
+        fetch('https://art-and-craft-store-server-lyart.vercel.app/subcategory')
             .then(res => res.json())
             .then(data => {
                 setSubcategory(data)

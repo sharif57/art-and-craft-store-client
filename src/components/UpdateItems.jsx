@@ -31,7 +31,7 @@ const UpdateItems = () => {
         const newUsers = { name, email, image, item_name, subcategory, price, rating, customization, stockStatus, description, time }
         // console.log(newUsers);
 
-        fetch(`http://localhost:5000/items/${_id}`, {
+        fetch(`https://art-and-craft-store-server-lyart.vercel.app/items/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
