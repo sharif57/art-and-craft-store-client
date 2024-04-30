@@ -6,11 +6,12 @@ import { Link } from "react-router-dom";
 const MyCard = () => {
 
     useEffect(() => {
-		document.title = 'My Card Section'
-	}, [])
+        document.title = 'My Card Section'
+    }, [])
 
     const { user } = useContext(AuthContext)
     const [item, setItem] = useState([])
+    const [sort, setSort] = useState([])
 
     const handleDelete = id => {
         Swal.fire({
@@ -39,6 +40,7 @@ const MyCard = () => {
                                 // console.log('delete');
                                 const remaining = item.filter(i => i._id !== id);
                                 setItem(remaining)
+                                setSort(remaining)
                             }
                         })
                 }
@@ -53,18 +55,37 @@ const MyCard = () => {
                 setItem(data);
             })
     }, [user])
+    const handleSort = (filter) => {
+        if (filter === 'all') {
+            setSort(item)
+        }
+        else if (filter === 'yes') {
+            const sort = item.filter(y => y.customization === 'yes')
+            setSort(sort)
+        }
+        else if (filter === 'no') {
+            const sort = item.filter(y => y.customization === 'no')
+            setSort(sort)
+        }
+
+    }
     return (
         <div className="font-Roboto">
-            <div className="dropdown">
-                <div tabIndex={0} role="button" className="btn m-1">Click</div>
-                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
-                </ul>
+            <div className="w-1/2 mx-auto mb-5">
+                <div className="dropdown">
+                    <div tabIndex={0} role="button" className="btn m-1 -ml-2 "> <p className="btn btn-primary " onClick={() => handleSort('all')}><a>Click and See Data(Customization: Sort)</a></p></div>
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <div>
+                            {/* <li onClick={() => handleSort('all')}><a> All</a></li> */}
+                            <li onClick={() => handleSort('yes')}><a>yes</a></li>
+                            <li onClick={() => handleSort('no')}><a>no</a></li>
+                        </div>
+                    </ul>
+                </div>
             </div>
             <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 shadow-2xl p-4 gap-6">
                 {
-                    item?.map(p => (
+                    sort?.map(p => (
                         <div key={p._id}>
 
                             <article className="flex bg-white p-4 shadow-md  transition hover:shadow-xl">
@@ -91,11 +112,11 @@ const MyCard = () => {
                                         </a>
 
                                         <div className="flex justify-between mt-3">
-                                            <p className="bg-green-200 rounded-xl p-2">Rating:{p.rating}</p>
+                                            <p className="bg-green-200 rounded-xl p-2">Rating: {p.rating}</p>
                                             <p className="bg-green-200 rounded-xl p-2">Prices: {p.price}</p>
                                         </div>
                                         <div className="flex justify-between mt-3 flex-col font-semibold">
-                                            <p className="bg-gray-200 rounded-xl p-2">StockStatus:{p.stockStatus}</p>
+                                            <p className="bg-gray-200 rounded-xl p-2">StockStatus: {p.stockStatus}</p>
                                             <p className="bg-gray-200 rounded-xl p-2 mt-3">Customization: {p.customization}</p>
                                         </div>
 

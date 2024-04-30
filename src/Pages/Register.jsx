@@ -21,7 +21,7 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState('')
     const location = useLocation()
     const navigate = useNavigate()
-    const notify = () => toast("user register successfully!");
+    // const notify = () => toast("user register successfully!");
 
 
 
@@ -31,19 +31,16 @@ const Register = () => {
         const email = e.target.email.value;
         const photo = e.target.photo.value;
         const password = e.target.password.value;
-        registerUser(email, password)
-            .then(() => {
-                navigate(location?.state ? location.state : '/')
-            })
+        
 
         if (/^(?=.*[A-Z])(?=.*[a-z]).{6,}$/.test(password)) {
             setError(
-                // setError(Swal.fire({
-                //     title: 'Success!',
-                //     text: 'user login successfully',
-                //     icon: 'success',
-                //     confirmButtonText: 'Cool'
-                // }))
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'user login successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
 
             );
             registerUser(email, password)
@@ -113,10 +110,10 @@ const Register = () => {
                         </div>
 
                     </div>
-                    <button onClick={notify} className="btn btn-primary w-full">Register Now</button>
+                    <button  className="btn btn-primary w-full">Register Now</button>
                 </form>
             </div>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
 
 
         </div>

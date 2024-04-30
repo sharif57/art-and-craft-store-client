@@ -4,7 +4,7 @@ const Review = () => {
             <section className="">
                 <div className="mx-auto  max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
                     <h2 className="text-center lg:text-5xl text-2xl font-bold tracking-tight  sm:text-5xl  bg-gradient-to-r from-pink-600 via-blue-900 to-blue-500 text-transparent bg-clip-text animate-gradient">
-                        Read trusted reviews from our customers
+                        Read Trusted Reviews From Our Customers
                     </h2>
 
                     <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">

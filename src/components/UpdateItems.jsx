@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { CgLaptop } from "react-icons/cg";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -24,6 +25,7 @@ const UpdateItems = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const customization = form.customization.value;
+        console.log(customization);
         const stockStatus = form.stockStatus.value;
         const description = form.description.value;
         const time = form.time.value;
@@ -104,8 +106,8 @@ const UpdateItems = () => {
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Customization</label>
                         <select name="customization" className="mt-1  p-2.5 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" defaultValue={customization}>
-                            <option value="In Stock">yes</option>
-                            <option value="Made to Order">no</option>
+                            <option value="yes">yes</option>
+                            <option value="no">no</option>
                         </select>
                     </div>
 
